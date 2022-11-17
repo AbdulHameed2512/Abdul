@@ -1,0 +1,33 @@
+h3{
+    text-align: left;
+    margin-top: 50px;
+    color:rgb(226, 226, 72);
+    text-shadow: 2px 0px 1px black;
+}
+.content ul li{
+    margin-top: 40px;
+    display:inline-block;
+   color:white;
+   text-align: center;
+}
+p{
+    color:white;
+}
+.content ul li i{
+    font-size: larger;
+}
+.form-title{
+    margin-top: 80px;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.form-control.ng-touched.ng-invalid{
+    border: 1px solid red;
+    color: red;
+}
+span{
+    color:red;
+}
+.forms{
+    color: rgb(200, 200, 50);
+}

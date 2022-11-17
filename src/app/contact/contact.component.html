@@ -1,0 +1,74 @@
+<div class="container">
+    <h3>Contact</h3>
+    <div class="content">
+        <ul>
+            <li class="col-12">
+                <i class="bi bi-geo-alt-fill"></i>
+                <h6>Vehi Service</h6>
+                <p>No11,Hastinapuram,Chennai-600064</p>
+            </li>
+            <li class="col-12">
+                <i class="bi bi-telephone-fill"></i>
+                <h6>+91(9566120634)</h6>
+            </li>
+            <li class="col-12">
+                <i class="bi bi-envelope-fill"></i>
+                <h6>vehiservice@gmail.com</h6>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="row-2">
+        <div class="form-title mt-5">
+        <p>If you wish to contact us please do so using the form below:</p>
+     
+        </div>
+    <div class="forms col-12 mt-4">
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()" >
+            <div class="form-group mt-5">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname" class="form-control" formControlName="firstname" autocomplete="off">
+                <span class="help-block" *ngIf="!userForm.get('firstname').valid && userForm.get('firstname').touched"> please enter a name !</span>
+
+            </div>
+            <div class="form-group mt-2">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname" class="form-control" formControlName="lastname" autocomplete="off">
+
+            </div>
+            <div class="form-group mt-2">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" class="form-control" formControlName="email" autocomplete="off">
+                <span class="help-block" *ngIf="!userForm.get('email').valid && userForm.get('email').touched"> please enter a valid mail id !</span>
+
+            </div>
+            <div class="form-group mt-2">
+                <label for="gender">Last Name</label>&nbsp;&nbsp;&nbsp;
+                <input type="radio" value="male" name="gender" formControlName="gender"> male
+                <input type="radio" value="female" name="gender" formControlName="gender"> Female
+
+            </div>
+            <div class="form-group mt-2">
+                <label for="country">Country</label>
+                <select id="country" name="country" class="form-control" formControlName="country">
+                    <option *ngFor="let c of districtList">{{c.districtName}}</option>
+                </select>
+            </div>
+            <div class="form-group mt-2">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" class="form-control" formControlName="message" rows="4"></textarea>
+            </div>
+            <div class="form-group mt-2">
+                <button type="submit" class="btn btn-danger" [disabled]="!userForm.valid"> Submit</button>
+            </div>
+        </form>
+        <div class="map col-12 mt-5">
+            <iframe width="600" height="400" frameborder="0" scrolling="no" marginheight="0" 
+            marginwidth="0" id="gmap_canvas" 
+            src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=chennai%20Chennai+(chennai)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+            <a href='https://maps-generator.com/'>Maps Generator</a>
+        </div>
+    </div>
+</div>
+</div>
+
